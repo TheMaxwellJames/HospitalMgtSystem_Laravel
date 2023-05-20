@@ -88,9 +88,20 @@
 
             @auth 
 
-            <x-app-layout>
+            <a class="nav-link" id="profileDropdown" href="#" data-bs-toggle="dropdown">
+                  <div class="navbar-profile">
+                  
+                    <p class="mb-0 d-none d-sm-block navbar-profile-name">{{ Auth::user()->name }}</p>
+                    <i class="mdi mdi-menu-down d-none d-sm-block"></i>
+                  </div>
+                </a>
 
-            </x-app-layout>
+
+                <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="">Logout</button>
+                       </form>
+
 
             @else
 
@@ -100,7 +111,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="btn btn-primary ml-lg-3" href="{{('register'))">Register</a>
+              <a class="btn btn-primary ml-lg-3" href="{{('register')}}">Register</a>
             </li>
 
                 @endauth 

@@ -33,3 +33,6 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+
+Route::post('/logout', [HomeController::class, 'logout'])->name('logout');
