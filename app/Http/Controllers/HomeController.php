@@ -68,6 +68,9 @@ class HomeController extends Controller
 
 
 
+
+
+
     public function appointment(Request $request)
     {
         $data = new appointment;
@@ -94,6 +97,40 @@ class HomeController extends Controller
 
             return redirect()->back()->with('message', 'Appointment Request Sent. We Will Contact You Soon');
      
+    }
+
+
+
+
+
+    public function myappointment()
+    {
+
+        if(Auth::id())
+        {
+
+            $userid=Auth::user()->id;
+
+            $appoint=appointment::where('user_id', $userid)->get();
+
+            return view('user.my_appointment', compact('appoint'));
+        }
+
+        else
+        {
+            return redirect()->back();
+        }
+            
+    }
+
+
+    public function cancel_appoint($id)
+    {
+            $data=appointment::find($id);
+
+            $data->delete();
+
+            return redirect()->back();
     }
 
 
