@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +37,6 @@ Route::middleware([
 
 
 Route::post('/logout', [HomeController::class, 'logout'])->name('logout');
+
+Route::get('/add_doctor_view', [AdminController::class, 'addview']);
+Route::post('/upload_doctor', [AdminController::class, 'upload']);
