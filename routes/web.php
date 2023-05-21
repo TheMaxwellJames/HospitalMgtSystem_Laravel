@@ -42,6 +42,9 @@ Route::post('/logout', [HomeController::class, 'logout'])->name('logout');
 
 Route::get('/add_doctor_view', [AdminController::class, 'addview']);
 Route::post('/upload_doctor', [AdminController::class, 'upload']);
+Route::get('/showappointment', [AdminController::class, 'showappointment']);
+Route::get('/approved/{id}', [AdminController::class, 'approved']);
+Route::get('/canceled/{id}', [AdminController::class, 'canceled']);
 
 
 
