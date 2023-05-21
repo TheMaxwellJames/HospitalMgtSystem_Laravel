@@ -38,5 +38,12 @@ Route::middleware([
 
 Route::post('/logout', [HomeController::class, 'logout'])->name('logout');
 
+//Admin Routes
+
 Route::get('/add_doctor_view', [AdminController::class, 'addview']);
 Route::post('/upload_doctor', [AdminController::class, 'upload']);
+
+
+
+//User Routes
+Route::post('/appointment', [HomeController::class, 'appointment']);

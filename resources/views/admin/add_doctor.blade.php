@@ -69,7 +69,7 @@
                     <div class="alert alert-success">
 
                   <button type="button" class="close" data-dismiss="alert">
-                      X
+                      x
                     </button>
 
                     {{session()->get('message')}}
@@ -77,7 +77,7 @@
                     </div>
 
 
-   @endif
+                       @endif
 
 
 
