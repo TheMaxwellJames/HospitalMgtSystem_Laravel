@@ -45,10 +45,14 @@
       </div>
       <!-- partial:partials/_sidebar.html -->
       @include('admin.sidebar')
+
+
       <!-- partial -->
      
     
 @include('admin.navbar')
+
+
 
 
 
@@ -63,21 +67,22 @@
                  <div class="container" align="center" style="padding-top:100px;">
 
 
+            
+                      @if(session()->has('message'))
 
-                  @if(session()->has('message'))
+                <div class="alert alert-success">
 
-                    <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert">
+                  x
+                </button>
 
-                  <button type="button" class="close" data-dismiss="alert">
-                      x
-                    </button>
+                {{session()->get('message')}}
 
-                    {{session()->get('message')}}
-
-                    </div>
+                </div>
 
 
-                       @endif
+                  @endif
+            
 
 
 

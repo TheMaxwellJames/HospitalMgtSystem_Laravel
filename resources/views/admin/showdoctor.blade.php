@@ -67,7 +67,7 @@
         </td>
 
         <td>
-            <a href="" class="btn btn-primary">Update</a>
+            <a href="{{url('updatedoctor',$doctor->id)}}" class="btn btn-primary">Update</a>
         </td>
         
     </tr>
